@@ -1,0 +1,37 @@
+{
+  "name": "@ixr/ui",
+  "version": "1.5.2",
+  "type": "module",
+  "main": "./dist/lib/ixr-agent-ui.js",
+  "module": "./dist/lib/ixr-agent-ui.js",
+  "types": "./dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/index.d.ts",
+      "import": "./dist/lib/ixr-agent-ui.js",
+      "default": "./dist/lib/ixr-agent-ui.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "description": "UI components for ixr-agent - Panel and i18n",
+  "keywords": [
+    "ixr-agent",
+    "ui",
+    "panel",
+    "i18n"
+  ],
+  "author": "IXR / Vishnu Madhav",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishnu-madhavan-git/ixr-agent.git"
+  },
+  "homepage": "https://github.com/vishnu-madhavan-git/ixr-agent",
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "node -e \"const fs=require('fs');['LICENSE'].forEach(f=>fs.copyFileSync('../../'+f,f))\"",
+    "postpublish": "node -e \"['LICENSE'].forEach(f=>{try{require('fs').unlinkSync(f)}catch{}})\""
+  }
+}

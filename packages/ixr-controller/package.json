@@ -1,0 +1,40 @@
+{
+  "name": "@ixr/ixr-controller",
+  "version": "1.5.2",
+  "type": "module",
+  "main": "./dist/lib/page-controller.js",
+  "module": "./dist/lib/page-controller.js",
+  "types": "./dist/lib/PageController.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/PageController.d.ts",
+      "import": "./dist/lib/page-controller.js",
+      "default": "./dist/lib/page-controller.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "description": "Page controller for ixr-agent - DOM operations and element interactions",
+  "keywords": [
+    "ixr-agent",
+    "dom",
+    "browser-automation",
+    "web-automation"
+  ],
+  "author": "IXR / Vishnu Madhav",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishnu-madhavan-git/ixr-agent.git"
+  },
+  "homepage": "https://github.com/vishnu-madhavan-git/ixr-agent",
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "node -e \"const fs=require('fs');['LICENSE'].forEach(f=>fs.copyFileSync('../../'+f,f))\"",
+    "postpublish": "node -e \"['LICENSE'].forEach(f=>{try{require('fs').unlinkSync(f)}catch{}})\""
+  },
+  "dependencies": {
+    "ai-motion": "^0.4.8"
+  }
+}

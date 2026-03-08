@@ -1,0 +1,47 @@
+{
+  "name": "@ixr/llms",
+  "version": "1.5.2",
+  "type": "module",
+  "main": "./dist/lib/ixr-agent-llms.js",
+  "module": "./dist/lib/ixr-agent-llms.js",
+  "types": "./dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/index.d.ts",
+      "import": "./dist/lib/ixr-agent-llms.js",
+      "default": "./dist/lib/ixr-agent-llms.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "description": "LLM client with reflection-before-action mental model for ixr-agent",
+  "keywords": [
+    "ixr-agent",
+    "llm",
+    "openai",
+    "tool-calling",
+    "agent"
+  ],
+  "author": "IXR / Vishnu Madhav",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishnu-madhavan-git/ixr-agent.git"
+  },
+  "homepage": "https://github.com/vishnu-madhavan-git/ixr-agent",
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "node -e \"const fs=require('fs');['LICENSE'].forEach(f=>fs.copyFileSync('../../'+f,f))\"",
+    "postpublish": "node -e \"['LICENSE'].forEach(f=>{try{require('fs').unlinkSync(f)}catch{}})\""
+  },
+  "dependencies": {
+    "chalk": "^5.6.2"
+  },
+  "peerDependencies": {
+    "zod": "^3.25.0 || ^4.0.0"
+  },
+  "devDependencies": {
+    "zod": "^4.3.5"
+  }
+}
